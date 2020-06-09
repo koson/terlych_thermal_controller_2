@@ -1,0 +1,90 @@
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\Terlych Thermal Controller.exe.config
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\Terlych Thermal Controller.exe
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\Terlych Thermal Controller.pdb
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\obj\Debug\Terlych Thermal Controller.csprojAssemblyReference.cache
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\obj\Debug\Terlych_Thermal_Controller.Properties.Resources.resources
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\obj\Debug\Terlych Thermal Controller.csproj.GenerateResource.cache
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\obj\Debug\Terlych Thermal Controller.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\obj\Debug\Terlych Thermal Controller.exe
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\obj\Debug\Terlych Thermal Controller.pdb
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\obj\Debug\Terlych_Thermal_Controller.Form1.resources
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\ZedGraph.dll
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\ZedGraph.xml
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\de\ZedGraph.resources.dll
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\es\ZedGraph.resources.dll
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\fr\ZedGraph.resources.dll
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\hu\ZedGraph.resources.dll
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\it\ZedGraph.resources.dll
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\ja\ZedGraph.resources.dll
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\pt\ZedGraph.resources.dll
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\ru\ZedGraph.resources.dll
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\sk\ZedGraph.resources.dll
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\sv\ZedGraph.resources.dll
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\tr\ZedGraph.resources.dll
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\obj\Debug\Terlych Thermal Controller.csproj.CopyComplete
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\OwenioNet.DataConverter.dll
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\OwenioNet.dll
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\NModbus4.dll
+C:\Users\HP\Documents\Terlych Thermal Controller\Terlych Thermal Controller\bin\Debug\NModbus4.xml
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\Terlych Thermal Controller.exe.config
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\Terlych Thermal Controller.exe
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\Terlych Thermal Controller.pdb
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\NModbus4.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\OwenioNet.DataConverter.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\OwenioNet.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\ZedGraph.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\NModbus4.xml
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\ZedGraph.xml
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\de\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\es\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\fr\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\hu\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\it\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\ja\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\pt\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\ru\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\sk\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\sv\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\tr\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\obj\Debug\Terlych Thermal Controller.csprojAssemblyReference.cache
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\obj\Debug\Terlych_Thermal_Controller.Form1.resources
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\obj\Debug\Terlych_Thermal_Controller.Properties.Resources.resources
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\obj\Debug\Terlych Thermal Controller.csproj.GenerateResource.cache
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\obj\Debug\Terlych Thermal Controller.csproj.CoreCompileInputs.cache
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\obj\Debug\Terlych Thermal Controller.csproj.CopyComplete
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\obj\Debug\Terlych Thermal Controller.exe
+C:\Users\Terlych\Documents\Terlych Thermal Controller\terlych_thermal_controller\Terlych Thermal Controller\obj\Debug\Terlych Thermal Controller.pdb
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\Terlych Thermal Controller.exe.config
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\Terlych Thermal Controller.exe
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\Terlych Thermal Controller.pdb
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\NModbus4.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\OwenioNet.DataConverter.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\OwenioNet.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\ZedGraph.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\NModbus4.xml
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\ZedGraph.xml
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\de\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\es\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\fr\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\hu\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\it\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\ja\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\pt\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\ru\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\sk\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\sv\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\tr\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\obj\Debug\Terlych Thermal Controller.csprojAssemblyReference.cache
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\obj\Debug\Terlych_Thermal_Controller.Form1.resources
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\obj\Debug\Terlych_Thermal_Controller.Properties.Resources.resources
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\obj\Debug\Terlych Thermal Controller.csproj.GenerateResource.cache
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\obj\Debug\Terlych Thermal Controller.csproj.CoreCompileInputs.cache
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\obj\Debug\Terlych Thermal Controller.csproj.CopyComplete
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\obj\Debug\Terlych Thermal Controller.exe
+C:\Users\Terlych\Documents\Terlych Thermal Controller 2\Terlych Thermal Controller\obj\Debug\Terlych Thermal Controller.pdb
