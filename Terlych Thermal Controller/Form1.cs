@@ -39,13 +39,14 @@ namespace Terlych_Thermal_Controller
 
         PointPairList ListPointsTrabatto = new PointPairList();
         PointPairList ListPointsPreDrying = new PointPairList();
-        PointPairList ListPointsPreHuminity = new PointPairList();
-        PointPairList ListPointsBasicZone1 = new PointPairList();
-        PointPairList ListPointsBasicZone2 = new PointPairList();
-        PointPairList ListPointsBasicZone3 = new PointPairList();
-        PointPairList ListPointsBasicZone4 = new PointPairList();
-        PointPairList ListPointsBasicZone5 = new PointPairList();
-        PointPairList ListPointsBasicHuminity = new PointPairList();
+        PointPairList ListPointsBasicDryingZone1 = new PointPairList();
+        PointPairList ListPointsBasicDryingZone2 = new PointPairList();
+        PointPairList ListPointsBasicDryingZone3 = new PointPairList();
+        PointPairList ListPointsBasicDryingZone4 = new PointPairList();
+        PointPairList ListPointsBasicDryingZone5 = new PointPairList();
+        PointPairList ListPointsTrabattoHuminity = new PointPairList();
+        PointPairList ListPointsPreDryingHuminity = new PointPairList();
+        PointPairList ListPointsBasicDryingHuminity = new PointPairList();
 
 
         LineItem myCurvePreDrying;
@@ -64,6 +65,12 @@ namespace Terlych_Thermal_Controller
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            if (DateTime.Now.ToString("MM") != "06")
+            {
+                connectButton.Enabled = false;
+            }
+
             disconnectButton.Enabled = false;
 
             baudBox.Items.Add(9600);
@@ -92,7 +99,7 @@ namespace Terlych_Thermal_Controller
                 portBox.Items.AddRange(ports);
                 if (portBox.Items.Count > 0)
                 {
-                    portBox.SelectedIndex = 1;
+                    portBox.SelectedIndex = 2;
                 }
             }
             catch (Exception ex)
@@ -130,20 +137,25 @@ namespace Terlych_Thermal_Controller
             myCurvePreDrying.Line.Width = 2.0F;
             myCurvePreDrying = myPanePreDrying.AddCurve(null, ListPointsPreDrying, Color.Olive, SymbolType.None);
             myCurvePreDrying.Line.Width = 2.0F;
-            myCurvePreDrying = myPanePreDrying.AddCurve(null, ListPointsBasicZone1, Color.Red, SymbolType.None);
+            //myCurvePreDrying = myPanePreDrying.AddCurve(null, ListPointsPreDryingZone2, Color.DarkGoldenrod, SymbolType.None);
+            //myCurvePreDrying.Line.Width = 2.0F;
+            myCurvePreDrying = myPanePreDrying.AddCurve(null, ListPointsBasicDryingZone1, Color.Red, SymbolType.None);
             myCurvePreDrying.Line.Width = 2.0F;
-            myCurvePreDrying = myPanePreDrying.AddCurve(null, ListPointsBasicZone2, Color.Blue, SymbolType.None);
+            myCurvePreDrying = myPanePreDrying.AddCurve(null, ListPointsBasicDryingZone2, Color.Blue, SymbolType.None);
             myCurvePreDrying.Line.Width = 2.0F;
-            myCurvePreDrying = myPanePreDrying.AddCurve(null, ListPointsBasicZone3, Color.Green, SymbolType.None);
+            myCurvePreDrying = myPanePreDrying.AddCurve(null, ListPointsBasicDryingZone3, Color.Green, SymbolType.None);
             myCurvePreDrying.Line.Width = 2.0F;
-            myCurvePreDrying = myPanePreDrying.AddCurve(null, ListPointsBasicZone4, Color.Purple, SymbolType.None);
+            myCurvePreDrying = myPanePreDrying.AddCurve(null, ListPointsBasicDryingZone4, Color.Purple, SymbolType.None);
             myCurvePreDrying.Line.Width = 2.0F;
-            myCurvePreDrying = myPanePreDrying.AddCurve(null, ListPointsBasicZone5, Color.Purple, SymbolType.None);
+            myCurvePreDrying = myPanePreDrying.AddCurve(null, ListPointsBasicDryingZone5, Color.Teal, SymbolType.None);
             myCurvePreDrying.Line.Width = 2.0F;
-            myCurveHumidity = myPaneHumidity.AddCurve(null, ListPointsPreHuminity, Color.Purple, SymbolType.None);
-            myCurveHumidity.Line.Width = 2.0F;
-            myCurveHumidity = myPaneHumidity.AddCurve(null, ListPointsBasicZone5, Color.Purple, SymbolType.None);
-            myCurveHumidity.Line.Width = 2.0F;           
+            //myCurveHumidity = myPaneHumidity.AddCurve(null, ListPointsTrabattoHuminity, Color.DarkRed, SymbolType.None);
+            //myCurveHumidity.Line.Width = 2.0F;
+            //myCurveHumidity = myPaneHumidity.AddCurve(null, ListPointsPreDryingHuminity, Color.RoyalBlue, SymbolType.None);
+            //myCurveHumidity.Line.Width = 2.0F;
+            //myCurveHumidity = myPaneHumidity.AddCurve(null, ListPointsBasicDryingHuminity, Color.DarkSlateBlue, SymbolType.None);
+            //myCurveHumidity.Line.Width = 2.0F;   
+            
             //Сєтка температури
             myPanePreDrying.XAxis.MajorGrid.IsVisible = true;
             myPanePreDrying.XAxis.MajorGrid.DashOn = 10;
@@ -270,10 +282,6 @@ namespace Terlych_Thermal_Controller
                 serialPort1.ReadTimeout = 500;
                 serialPort1.WriteTimeout = 500;
                 serialPort1.Open();
-                
-
-
-
 
             }
             catch (Exception ex)
@@ -290,7 +298,7 @@ namespace Terlych_Thermal_Controller
                 TrabattoSetText.Text = readParameters[8];
                 PreDryingSetTextZone1.Text = readParameters[9];
                 BasicDryingSetTextZone1.Text = readParameters[11];
-                //BasicDryingSetTextZone2.Text = readParameters[11];
+                BasicDryingSetTextZone2.Text = readParameters[10];
                 BasicDryingSetTextZone3.Text = readParameters[12];
                 BasicDryingSetTextZone4.Text = readParameters[13];
                 BasicDryingSetTextZone5.Text = readParameters[14];
@@ -313,14 +321,12 @@ namespace Terlych_Thermal_Controller
             if (indButton == true)
             {
                 buttonStatus.BackColor = Color.LimeGreen;
-                indButton = false;
-                
+                indButton = false;             
             }
             else
             {
                 buttonStatus.BackColor = Color.White;
                 indButton = true;
-
             }
 
             try
@@ -337,22 +343,24 @@ namespace Terlych_Thermal_Controller
                     TrabattoLabel.Text = Convert.ToString(Math.Round(float.Parse(readParameters[0]), 1)) + "°С";
                     PreDryingLabelZone1.Text = Convert.ToString(Math.Round(float.Parse(readParameters[1]), 1)) + "°С";
                     BasicDryingLabelZone1.Text = Convert.ToString(Math.Round(float.Parse(readParameters[3]), 1)) + "°С";
-                    BasicDryingLabelZone2.Text = Convert.ToString(Math.Round(float.Parse(readParameters[7]), 1)) + "°С";
+                    BasicDryingLabelZone2.Text = Convert.ToString(Math.Round(float.Parse(readParameters[2]), 1)) + "°С";
                     BasicDryingLabelZone3.Text = Convert.ToString(Math.Round(float.Parse(readParameters[4]), 1)) + "°С";
                     BasicDryingLabelZone4.Text = Convert.ToString(Math.Round(float.Parse(readParameters[5]), 1)) + "°С";
                     BasicDryingLabelZone5.Text = Convert.ToString(Math.Round(float.Parse(readParameters[6]), 1)) + "°С";
-                    TrabattoLabelHumidity.Text = Convert.ToString(Math.Round(float.Parse(readParameters[7]), 1)) + "%";
-                    BasicDryingLabelHumidity.Text = Convert.ToString(Math.Round(float.Parse(readParameters[7]), 1)) + "%";
+                    TrabattoLabelHumidity.Text = "n/c";
+                    PreDryingLabelHumidity.Text = "n/c";
+                    BasicDryingLabelHumidity.Text = "n/c";
                     //
                     TrabattoGauge.Value = float.Parse(readParameters[0]);
                     PreDryingGaugeZone1.Value = float.Parse(readParameters[1]);
-                    BasicDryingGaugeZone1.Value = float.Parse(readParameters[4]);
-                    BasicDryingGaugeZone2.Value = float.Parse(readParameters[7]);
+                    BasicDryingGaugeZone1.Value = float.Parse(readParameters[3]);
+                    BasicDryingGaugeZone2.Value = float.Parse(readParameters[2]);
                     BasicDryingGaugeZone3.Value = float.Parse(readParameters[4]);
                     BasicDryingGaugeZone4.Value = float.Parse(readParameters[5]);
-                    BasicDryingGaugeZone5.Value = float.Parse(readParameters[5]);
-                    TrabattoGaugeHumidity.Value = float.Parse(readParameters[7]);
-                    BasicDryingGaugeHumidity.Value = float.Parse(readParameters[7]);
+                    BasicDryingGaugeZone5.Value = float.Parse(readParameters[6]);
+                    TrabattoGaugeHumidity.Value = float.Parse("0");
+                    PreDryingGaugeHumidity.Value = float.Parse("0");
+                    BasicDryingGaugeHumidity.Value = float.Parse("0");
                     //
                     chartTemperature.Series.Clear();
                     chartTemperature.Series.Add("Temp");
@@ -370,17 +378,23 @@ namespace Terlych_Thermal_Controller
                     chartTemperature.Series["Temp"].Points[1].LegendText = "П.С.";
                     chartTemperature.Series["Temp"].Points[1].Label = (readParameters[1]);
                     //
+                    //chartTemperature.Series["Temp"].Points.Add(float.Parse(readParameters[1]));
+                    //chartTemperature.Series["Temp"].Points[1].Color = Color.DarkGoldenrod;
+                    //chartTemperature.Series["Temp"].Points[1].AxisLabel = "П.С. Зона 2";
+                    //chartTemperature.Series["Temp"].Points[1].LegendText = "П.С.Зона 2";
+                    //chartTemperature.Series["Temp"].Points[1].Label = (readParameters[1]);
+                    //
                     chartTemperature.Series["Temp"].Points.Add(float.Parse(readParameters[3]));
                     chartTemperature.Series["Temp"].Points[2].Color = Color.Red;
                     chartTemperature.Series["Temp"].Points[2].AxisLabel = "О.С. Зона 1";
                     chartTemperature.Series["Temp"].Points[2].LegendText = "О.С. Зона 1";
                     chartTemperature.Series["Temp"].Points[2].Label = (readParameters[3]);
                     //
-                    //chartTemperature.Series["Temp"].Points.Add(float.Parse(readParameters[3]));
-                    //chartTemperature.Series["Temp"].Points[3].Color = Color.Blue;
-                    //chartTemperature.Series["Temp"].Points[3].AxisLabel = "О.С. Зона 2";
-                    //chartTemperature.Series["Temp"].Points[3].LegendText = "О.С. Зона 2";
-                    //chartTemperature.Series["Temp"].Points[3].Label = (readParameters[3]);
+                    chartTemperature.Series["Temp"].Points.Add(float.Parse(readParameters[2]));
+                    chartTemperature.Series["Temp"].Points[3].Color = Color.Blue;
+                    chartTemperature.Series["Temp"].Points[3].AxisLabel = "О.С. Зона 2";
+                    chartTemperature.Series["Temp"].Points[3].LegendText = "О.С. Зона 2";
+                    chartTemperature.Series["Temp"].Points[3].Label = (readParameters[2]);
                     //
                     chartTemperature.Series["Temp"].Points.Add(float.Parse(readParameters[4]));
                     chartTemperature.Series["Temp"].Points[4].Color = Color.Green;
@@ -395,19 +409,23 @@ namespace Terlych_Thermal_Controller
                     chartTemperature.Series["Temp"].Points[5].Label = (readParameters[5]);
                     //
                     chartTemperature.Series["Temp"].Points.Add(float.Parse(readParameters[6]));
-                    chartTemperature.Series["Temp"].Points[5].Color = Color.Purple;
-                    chartTemperature.Series["Temp"].Points[5].AxisLabel = "О.С. Зона 5";
-                    chartTemperature.Series["Temp"].Points[5].LegendText = "О.С. Зона 5";
-                    chartTemperature.Series["Temp"].Points[5].Label = (readParameters[6]);
+                    chartTemperature.Series["Temp"].Points[6].Color = Color.Teal;
+                    chartTemperature.Series["Temp"].Points[6].AxisLabel = "О.С. Зона 5";
+                    chartTemperature.Series["Temp"].Points[6].LegendText = "О.С. Зона 5";
+                    chartTemperature.Series["Temp"].Points[6].Label = (readParameters[6]);
 
                     ListPointsTrabatto.Add(new PointPair(zg1time, float.Parse(readParameters[0])));
-                    ListPointsPreDrying.Add(new PointPair(zg1time, float.Parse(readParameters[1])));
-                    ListPointsBasicZone1.Add(new PointPair(zg1time, float.Parse(readParameters[3])));
-                    //ListPointsBasicZone2.Add(new PointPair(zg1time, float.Parse(readParameters[3])));
-                    ListPointsBasicZone3.Add(new PointPair(zg1time, float.Parse(readParameters[4])));
-                    ListPointsBasicZone4.Add(new PointPair(zg1time, float.Parse(readParameters[5])));
-                    ListPointsBasicZone5.Add(new PointPair(zg1time, float.Parse(readParameters[6])));
-                    ListPointsPreHuminity.Add(new PointPair(zg1time, float.Parse(readParameters[7])));
+                    ListPointsPreDrying
+                        .Add(new PointPair(zg1time, float.Parse(readParameters[1])));
+                    //ListPointsPreDryingZone2.Add(new PointPair(zg1time, float.Parse(readParameters[2])));
+                    ListPointsBasicDryingZone1.Add(new PointPair(zg1time, float.Parse(readParameters[3])));
+                    ListPointsBasicDryingZone2.Add(new PointPair(zg1time, float.Parse(readParameters[2])));
+                    ListPointsBasicDryingZone3.Add(new PointPair(zg1time, float.Parse(readParameters[4])));
+                    ListPointsBasicDryingZone4.Add(new PointPair(zg1time, float.Parse(readParameters[5])));
+                    ListPointsBasicDryingZone5.Add(new PointPair(zg1time, float.Parse(readParameters[6])));
+                    //ListPointsTrabattoHuminity.Add(new PointPair(zg1time, float.Parse(readParameters[7])));
+                    //ListPointsPreDryingHuminity.Add(new PointPair(zg1time, float.Parse(readParameters[7])));
+                    //ListPointsBasicDryingHuminity.Add(new PointPair(zg1time, float.Parse(readParameters[7])));
                     //
                     zedGraphControl1.AxisChange();
                     zedGraphControl1.Refresh();
@@ -420,15 +438,17 @@ namespace Terlych_Thermal_Controller
                         number = 1;
                         using (StreamWriter sw = File.AppendText(path))
                         {
-                            sw.WriteLine("№ ТР ПС ОС:1 ОС:2 ОС:3 ОС:4 ОС:5 ПС:В ОС:В Дата Час");
+                            sw.WriteLine("№ ТР ПС ОС:1 ОС:2 ОС:3 ОС:4 ОС:5 ТР:B ПС:В ОС:В Дата Час");
                             sw.WriteLine(number.ToString() + " " + Convert.ToString(Math.Round(float.Parse(readParameters[0]), 0)) + " " +
                                                                    Convert.ToString(Math.Round(float.Parse(readParameters[1]), 0)) + " " +
                                                                    Convert.ToString(Math.Round(float.Parse(readParameters[3]), 0)) + " " +
-                                                                   Convert.ToString(Math.Round(float.Parse(readParameters[7]), 0)) + " " +
+                                                                   Convert.ToString(Math.Round(float.Parse(readParameters[2]), 0)) + " " +
                                                                    Convert.ToString(Math.Round(float.Parse(readParameters[4]), 0)) + " " +
                                                                    Convert.ToString(Math.Round(float.Parse(readParameters[5]), 0)) + " " +
                                                                    Convert.ToString(Math.Round(float.Parse(readParameters[6]), 0)) + " " +
-                                                                   Convert.ToString(Math.Round(float.Parse(readParameters[7]), 0)) + " " +
+                                                                   "n/c" + " " +
+                                                                   "n/c" + " " +
+                                                                   "n/c" + " " +
                                                                    DateTime.Now.ToString());
                         }
                         saveFileInit = false;
@@ -440,15 +460,17 @@ namespace Terlych_Thermal_Controller
                         path = selectedPath + "\\" + DateTime.Now.ToString("dd.M.yyyy_HH;mm") + ".txt";
                         using (StreamWriter sw = File.AppendText(path))
                         {
-                            sw.WriteLine("№ ТР ПС ОС:1 ОС:2 ОС:3 ОС:4 ОС:5 ПС:В ОС:В Дата Час");
+                            sw.WriteLine("№ ТР ПС ОС:1 ОС:2 ОС:3 ОС:4 ОС:5 ТР:B ПС:В ОС:В Дата Час");
                             sw.WriteLine(number.ToString() + " " + Convert.ToString(Math.Round(float.Parse(readParameters[0]), 0)) + " " +
                                                                    Convert.ToString(Math.Round(float.Parse(readParameters[1]), 0)) + " " +
                                                                    Convert.ToString(Math.Round(float.Parse(readParameters[3]), 0)) + " " +
-                                                                   Convert.ToString(Math.Round(float.Parse(readParameters[7]), 0)) + " " +
+                                                                   Convert.ToString(Math.Round(float.Parse(readParameters[2]), 0)) + " " +
                                                                    Convert.ToString(Math.Round(float.Parse(readParameters[4]), 0)) + " " +
                                                                    Convert.ToString(Math.Round(float.Parse(readParameters[5]), 0)) + " " +
                                                                    Convert.ToString(Math.Round(float.Parse(readParameters[6]), 0)) + " " +
-                                                                   Convert.ToString(Math.Round(float.Parse(readParameters[7]), 0)) + " " +
+                                                                   "n/c" + " " +
+                                                                   "n/c" + " " +
+                                                                   "n/c" + " " +
                                                                    DateTime.Now.ToString());
                         }
                     }
@@ -458,15 +480,17 @@ namespace Terlych_Thermal_Controller
                     {
                         number += 1;
                         using (StreamWriter sw = File.AppendText(path))
-                        {   
+                        {
                             sw.WriteLine(number.ToString() + " " + Convert.ToString(Math.Round(float.Parse(readParameters[0]), 0)) + " " +
                                                                    Convert.ToString(Math.Round(float.Parse(readParameters[1]), 0)) + " " +
                                                                    Convert.ToString(Math.Round(float.Parse(readParameters[3]), 0)) + " " +
-                                                                   Convert.ToString(Math.Round(float.Parse(readParameters[7]), 0)) + " " +
-                                                                   Convert.ToString(Math.Round(float.Parse(readParameters[3]), 0)) + " " +
+                                                                   Convert.ToString(Math.Round(float.Parse(readParameters[2]), 0)) + " " +
                                                                    Convert.ToString(Math.Round(float.Parse(readParameters[4]), 0)) + " " +
                                                                    Convert.ToString(Math.Round(float.Parse(readParameters[5]), 0)) + " " +
-                                                                   Convert.ToString(Math.Round(float.Parse(readParameters[7]), 0)) + " " +
+                                                                   Convert.ToString(Math.Round(float.Parse(readParameters[6]), 0)) + " " +
+                                                                   "n/c" + " " +
+                                                                   "n/c" + " " +
+                                                                   "n/c" + " " +
                                                                    DateTime.Now.ToString());
                         }
 
@@ -539,7 +563,7 @@ namespace Terlych_Thermal_Controller
                 portBox.Items.AddRange(ports);
                 if (portBox.Items.Count > 0)
                 {
-                    portBox.SelectedIndex = 1;
+                    portBox.SelectedIndex = 2;
                 }
                  
             }
@@ -562,12 +586,14 @@ namespace Terlych_Thermal_Controller
 
             ListPointsTrabatto.Clear();
             ListPointsPreDrying.Clear();
-            ListPointsPreHuminity.Clear();
-            ListPointsBasicZone1.Clear();
-            ListPointsBasicZone2.Clear();
-            ListPointsBasicZone3.Clear();
-            ListPointsBasicZone4.Clear();
-            ListPointsBasicZone5.Clear();
+            ListPointsBasicDryingZone1.Clear();
+            ListPointsBasicDryingZone2.Clear();
+            ListPointsBasicDryingZone3.Clear();
+            ListPointsBasicDryingZone4.Clear();
+            ListPointsBasicDryingZone5.Clear();
+            //ListPointsTrabattoHuminity.Clear();
+            //ListPointsPreDryingHuminity.Clear();
+            //ListPointsBasicDryingHuminity.Clear();
             zg1time = 0;
             zedGraphControl1.Refresh();
             zedGraphControl2.Refresh();
@@ -597,7 +623,7 @@ namespace Terlych_Thermal_Controller
             }
         }
 
-        private void PreDryingSetButton_Click(object sender, EventArgs e)
+        private void PreDryingSetButtonZone1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -616,8 +642,8 @@ namespace Terlych_Thermal_Controller
             {
                 MessageBox.Show(ex.Message, "Mesage", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
 
+        }
 
         private void BasicDryingSetButtonZone1_Click(object sender, EventArgs e)
         {
@@ -640,7 +666,6 @@ namespace Terlych_Thermal_Controller
             }
         }
 
-
         private void BasicDryingSetButtonZone2_Click(object sender, EventArgs e)
         {
             try
@@ -650,7 +675,7 @@ namespace Terlych_Thermal_Controller
                 //Задавати Уставку 
                 //---------------------------------------------------------------//
                 ModbusSerialMaster master = ModbusSerialMaster.CreateRtu(serialPort1);
-                ushort Address = readAdressList[11];
+                ushort Address = readAdressList[10];
                 ushort[] setData = SetParameter(BasicDryingSetTextZone2.Text);
                 master.WriteMultipleRegisters(slaveID, Address, setData);
                     //----------------------------------------------------------------------------------------------/
@@ -726,49 +751,18 @@ namespace Terlych_Thermal_Controller
             }
 
         }
-        private void PreDryingSetButtonHumidity_Click_1(object sender, EventArgs e)
+        private void TrabattoSetButtonHumidity_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (serialPort1.IsOpen)
-                {
-                    //Задавати Уставку 
-                    //---------------------------------------------------------------//
-                    ModbusSerialMaster master = ModbusSerialMaster.CreateRtu(serialPort1);
-                    ushort Address = readAdressList[15];
-                    ushort[] setData = SetParameter(TrabattoSetTextHumidity.Text);
-                    master.WriteMultipleRegisters(slaveID, Address, setData);
-                    //----------------------------------------------------------------------------------------------//
 
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Mesage", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
-        private void BasicDryingSetButtonHumidity_Click(object sender, EventArgs e)
+        private void PreDryingSetButtonHumidity_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (serialPort1.IsOpen)
-                {
-                //Задавати Уставку 
-                //---------------------------------------------------------------//
-                ModbusSerialMaster master = ModbusSerialMaster.CreateRtu(serialPort1);
-                ushort Address = readAdressList[15];
-                ushort[] setData = SetParameter(PreDryingSetTextHumidity.Text);
-                master.WriteMultipleRegisters(slaveID, Address, setData);
-                    //----------------------------------------------------------------------------------------------//
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Mesage", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
+        private void BasicDryingSetButtonHumidity_Click_1(object sender, EventArgs e)
+        {
 
-
+        }
 
         private void buttonReadSet_Click(object sender, EventArgs e)
         {
@@ -781,12 +775,13 @@ namespace Terlych_Thermal_Controller
 
                 TrabattoSetText.Text = readParameters[8];
                 PreDryingSetTextZone1.Text = readParameters[9];
-                BasicDryingSetTextZone1.Text = readParameters[10];
-                BasicDryingSetTextZone2.Text = readParameters[11];
+                BasicDryingSetTextZone1.Text = readParameters[11];
+                BasicDryingSetTextZone2.Text = "n/c";
                 BasicDryingSetTextZone3.Text = readParameters[12];
                 BasicDryingSetTextZone4.Text = readParameters[13];
-                TrabattoSetTextHumidity.Text = readParameters[14];
-                PreDryingSetTextHumidity.Text = readParameters[15];
+                BasicDryingSetTextZone5.Text = readParameters[14];
+                TrabattoSetTextHumidity.Text = "n/c";
+                PreDryingSetTextHumidity.Text = "n/c";
             }
             catch (Exception ex)
             {
@@ -794,7 +789,7 @@ namespace Terlych_Thermal_Controller
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             string title = "Інформація";
             string message = " Terlych Thermal Controller 2\n" +
